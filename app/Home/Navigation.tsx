@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link';
+import Login from 'login/page.tsx';
 const Navigation = () => {
     const navItems=[
         { id:"Dashboard",href:'/'},
@@ -53,4 +54,4 @@ const Navigation = () => {
   )
 }
 
-export default Navigation
+export default Navigation;

@@ -1,19 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 
-const Login = () => {
-  const [formData, setFormData] = useState({
+interface FormData {
+  emailOrPhone: string;
+  password: string;
+}
+
+const Login: React.FC = () => {
+  const [formData, setFormData] = useState<FormData>({
     emailOrPhone: '',
     password: ''
   });
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLButtonElement>): void => {
     e.preventDefault();
     console.log('Login attempt:', formData);
     // Handle login logic here
@@ -76,27 +81,25 @@ const Login = () => {
           <div className="mt-6 text-center">
             <p className="text-gray-600">
               Don't have an account?{' '}
-              <a 
-                href="/signup" 
+              <a
+                href="/signup"
                 className="text-blue-600 hover:text-blue-700 font-medium hover:underline transition-colors duration-200"
               >
                 Sign up
               </a>
             </p>
           </div>
-
-          {/* Additional Options */}
+          
           <div className="mt-4 text-center">
-            <a 
-              href="/forgot-password" 
+            <a
+              href="/forgot-password"
               className="text-sm text-gray-500 hover:text-gray-700 hover:underline transition-colors duration-200"
             >
               Forgot your password?
             </a>
           </div>
         </div>
-
-        {/* Footer */}
+        
         <div className="text-center mt-8 text-gray-400 text-sm">
           <p>© 2025 Frystik. All rights reserved.</p>
         </div>
