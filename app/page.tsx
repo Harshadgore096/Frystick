@@ -1,10 +1,10 @@
 import Image from "next/image";
-import Navigation from "./Home/Navigation";
+import BettingDashboard from './LandingPage'
 
 export default function Home() {
   return (
   <div>
-    <Navigation/>
+    <BettingDashboard/>
     </div>
   );
 }
