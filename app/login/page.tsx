@@ -1,5 +1,6 @@
+"use client"
 import React, { useState, ChangeEvent, FormEvent } from 'react';
-
+import Link from 'next/link'
 interface FormData {
   emailOrPhone: string;
   password: string;
@@ -22,6 +23,7 @@ const Login: React.FC = () => {
     e.preventDefault();
     console.log('Login attempt:', formData);
     // Handle login logic here
+
   };
 
   return (
@@ -71,22 +73,22 @@ const Login: React.FC = () => {
             </div>
 
             <button
-              onClick={handleSubmit}
+            
               className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-3 px-4 rounded-lg hover:from-orange-600 hover:to-orange-700 transform hover:scale-[1.02] transition-all duration-200 shadow-lg hover:shadow-xl"
             >
-              Log In
+             <Link href="/Landing">Log In</Link>
             </button>
           </div>
 
           <div className="mt-6 text-center">
             <p className="text-gray-600">
               Don't have an account?{' '}
-              <a
-                href="/signup"
+              <Link
+                href="/login"
                 className="text-blue-600 hover:text-blue-700 font-medium hover:underline transition-colors duration-200"
               >
                 Sign up
-              </a>
+              </Link>
             </p>
           </div>
           
