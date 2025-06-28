@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import Navigation from './Home-Coponent/Navigation';
+import Navigation from '../Home-Coponent/Navigation';
 const BettingDashboard = () => {
   
   const bets = [
